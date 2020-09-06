@@ -60,10 +60,10 @@
             function showPosition(position) {
 				var latlon = position.coords.latitude + "," + position.coords.longitude;
 
-  				var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false&key=YOUR_KEY";
+  				var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=14&size=400x300&sensor=false&key=YOUR_KEY";
               var changeTxt = "\n Latitude: " + position.coords.latitude + " " +
               "\nLongitude: " + position.coords.longitude;
-              x.href=("sms://832-591-0182?&body=Please%20come%20get%20me.%20I%20am%20in%20an%20unsafe%20location." + encodeURIComponent(changeTxt) +" " +img_url);
+              x.href=("sms://832-591-0182?&body=Please%20come%20get%20me.%20I%20am%20in%20an%20unsafe%20location." + encodeURIComponent(changeTxt) +" " + encodeURIComponent(img_url));
             }
             getLocation();
             </script>		
