@@ -59,8 +59,8 @@
             
             function showPosition(position) {
 
-              var changeTxt = "Latitude: " + position.coords.latitude + " " +
-              "Longitude: " + position.coords.longitude;
+              var changeTxt = "\n Latitude: " + position.coords.latitude + " " +
+              "\n Longitude: " + position.coords.longitude;
               x.href=("sms://832-591-0182?&body=Please%20come%20get%20me.%20I%20am%20in%20an%20unsafe%20location." + encodeURIComponent(changeTxt));
             }
             getLocation();
