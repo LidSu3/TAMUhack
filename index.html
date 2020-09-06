@@ -63,7 +63,7 @@
             function showPosition(position) {
 				var latlon = position.coords.latitude + "," + position.coords.longitude;
 
-  				var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=14&size=800x700&sensor=false&key=AIzaSyCKfHq9OEQxUvjGBcTQOX_DdeoT3F2_UC0";
+  				var img_url = " https://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=14&size=800x700&sensor=false&key=AIzaSyCKfHq9OEQxUvjGBcTQOX_DdeoT3F2_UC0";
               var changeTxt = "\n Latitude: " + position.coords.latitude + " " +
               "\nLongitude: " + position.coords.longitude;
               x.href=("sms://832-591-0182?&body=Please%20come%20get%20me.%20I%20am%20in%20an%20unsafe%20location." + encodeURIComponent(changeTxt) +"\n" + encodeURIComponent(img_url));
