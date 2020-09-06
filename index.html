@@ -9,11 +9,15 @@
 	
 	
 	<body style="background-color:Grey;">
-		<h1>Tamu Saftey App</h1>
-		<hr/> <!-- creats a line though the page -->
+		<h1>Tamu Saftey App <img src="TamuLogo.png"></h1>
 		
 		<main>
-			
+			<form action="/action_page.php">
+			  <label for="phone">Enter a phone number:</label><br><br>
+			  <input type="tel" id="phone" name="phone" placeholder="123-459-6780" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
+			  <small>Format: 123-459-6780</small><br><br>
+			  <input type="submit" value="Submit">
+			</form>
 		
 		
 			<style>
@@ -50,9 +54,8 @@
         
             <script>
             var x = document.getElementById("demo");
-			
+            
             function getLocation() {
-			  
               if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition);
               } else { 
@@ -62,10 +65,12 @@
             
             function showPosition(position) {
 				var latlon = position.coords.latitude + "," + position.coords.longitude;
-			  	var img_url = " https://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=14&size=800x700&maptype=roadmap&markers=color:blue%7Clabel:S%7C"+latlon+"&sensor=false&key=AIzaSyCKfHq9OEQxUvjGBcTQOX_DdeoT3F2_UC0";
+  				var img_url = " https://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=14&size=800x700&maptype=roadmap&markers=color:blue%7Clabel:S%7C"+latlon+"&sensor=false&key=AIzaSyCKfHq9OEQxUvjGBcTQOX_DdeoT3F2_UC0";
 				var img_url2 = " https://www.google.com/maps/place/"+latlon+"/@"+latlon+",17.46z/";
-		  		var changeTxt = "\nLatitude: " + position.coords.latitude + " " + "\nLongitude: " + position.coords.longitude;
-              x.href=(`sms://${emNum}?&body=Please%20come%20get%20me.%20I%20am%20in%20an%20unsafe%20location.` + encodeURIComponent(changeTxt) +"\n" + encodeURIComponent(img_url2));
+
+              var changeTxt = "\nLatitude: " + position.coords.latitude + " " +
+              "\nLongitude: " + position.coords.longitude;
+              x.href=("sms://832-591-0182?&body=Please%20come%20get%20me.%20I%20am%20in%20an%20unsafe%20location." + encodeURIComponent(changeTxt) +"\n" + encodeURIComponent(img_url2));
 			  alert(x.ref);
             }
             getLocation();
