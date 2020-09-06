@@ -61,13 +61,10 @@
             }
             
             function showPosition(position) {
-				var emNum = prompt("Please enter your emergency contact's phone number", "xxx-xxx-xxxx");
 				var latlon = position.coords.latitude + "," + position.coords.longitude;
-  				var img_url = " https://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=14&size=800x700&maptype=roadmap&markers=color:blue%7Clabel:S%7C"+latlon+"&sensor=false&key=AIzaSyCKfHq9OEQxUvjGBcTQOX_DdeoT3F2_UC0";
-				var img_url2 = " https://www.google.com/maps/embed/v1/search?center=" + latlon + "&zoom=14&maptype=roadmap&key=AIzaSyAMLJJ-8wknKRhmyCNkhPJh74mTkKg_-NQ&q=" + latlon
-
-              var changeTxt = "\nLatitude: " + position.coords.latitude + " " +
-              "\nLongitude: " + position.coords.longitude;
+			  	var img_url = " https://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=14&size=800x700&maptype=roadmap&markers=color:blue%7Clabel:S%7C"+latlon+"&sensor=false&key=AIzaSyCKfHq9OEQxUvjGBcTQOX_DdeoT3F2_UC0";
+				var img_url2 = " https://www.google.com/maps/place/"+latlon+"/@"+latlon+",17.46z/";
+		  		var changeTxt = "\nLatitude: " + position.coords.latitude + " " + "\nLongitude: " + position.coords.longitude;
               x.href=(`sms://${emNum}?&body=Please%20come%20get%20me.%20I%20am%20in%20an%20unsafe%20location.` + encodeURIComponent(changeTxt) +"\n" + encodeURIComponent(img_url2));
 			  alert(x.ref);
             }
